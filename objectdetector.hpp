@@ -11,7 +11,6 @@ class ObjectDetector
 
 public:
 	ObjectDetector(const String neural_network_file);
-	ObjectDetector();
 	std::vector<Rect> detectFaces(Mat frame);
 private:
 	CascadeClassifier face_cascade;

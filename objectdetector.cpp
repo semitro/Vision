@@ -7,10 +7,6 @@ ObjectDetector::ObjectDetector(const String neural_network_file)
 		throw std::ios_base::failure("Cannot load File" + neural_network_file);
 }
 
-ObjectDetector::ObjectDetector()
-{
-	std::cout << "Empty";
-}
 
 
 std::vector<Rect> ObjectDetector::detectFaces(Mat frame)
