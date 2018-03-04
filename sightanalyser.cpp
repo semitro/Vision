@@ -1,5 +1,4 @@
 #include "sightanalyser.hpp"
-#include <iostream>
 
 SightAnalyser::SightAnalyser(size_t framerate, String window_name)
 	:face_detector("haarcascade_frontalface_default.xml"), capture(0),
@@ -10,18 +9,10 @@ SightAnalyser::SightAnalyser(size_t framerate, String window_name)
 	looking.detach(); // threads should work independly
 }
 
-SightAnalyser::~SightAnalyser()
-{
-
-}
-
 void SightAnalyser::lookLoop()
 {
-
 	while(capture.read(current_frame)){
-
-		faces = face_detector.detectFaces(current_frame);
-
+		faces = face_detector.detectObjects(current_frame);
 		if(window_name != ""){
 			for ( size_t i = 0; i < faces.size(); i++ )
 			{
@@ -32,6 +23,5 @@ void SightAnalyser::lookLoop()
 			waitKey(capture.get(CAP_PROP_FPS));
 			imshow(window_name, current_frame );
 		}
-
 	}
 }

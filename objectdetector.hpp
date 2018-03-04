@@ -6,14 +6,15 @@
 
 using namespace cv;
 
+// detect object on a frame
 class ObjectDetector
 {
 
 public:
 	ObjectDetector(const String neural_network_file);
-	std::vector<Rect> detectFaces(Mat frame);
+	std::vector<Rect> detectObjects(Mat frame);
 private:
-	CascadeClassifier face_cascade;
+	CascadeClassifier classifier;
 };
 
 #endif // OBJECTDETECTOR_HPP
