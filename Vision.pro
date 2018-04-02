@@ -6,7 +6,8 @@ CONFIG -= qt
 SOURCES += main.cpp \
     objectdetector.cpp \
     sightanalyser.cpp \
-    behaviour.cpp
+    behaviour.cpp \
+    sightcorrector.cpp
 
 LIBS += -lpthread -lavcodec
 # -lavformat -lavresample -lswscale -lavutil
@@ -14,5 +15,6 @@ LIBS += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_videoio -lope
 
 HEADERS += \
     objectdetector.hpp \
-    sightanalyser.hpp
+    sightanalyser.hpp \
+    sightcorrector.hpp
 
