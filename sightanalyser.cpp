@@ -13,6 +13,7 @@ void SightAnalyser::lookLoop()
 {
 	while(capture.read(current_frame)){
 		faces = face_detector.detectObjects(current_frame);
+		#ifdef GUI_MODE // Вывод в экран для отладки. На pi нет экрана.
 		if(window_name != ""){
 			for ( size_t i = 0; i < faces.size(); i++ )
 			{
@@ -23,5 +24,6 @@ void SightAnalyser::lookLoop()
 			waitKey(capture.get(CAP_PROP_FPS));
 			imshow(window_name, current_frame );
 		}
+		#endif // GUI_MODE
 	}
 }
