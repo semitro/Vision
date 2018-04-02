@@ -5,7 +5,8 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     objectdetector.cpp \
-    sightanalyser.cpp
+    sightanalyser.cpp \
+    behaviour.cpp
 
 LIBS += -lpthread -lavcodec
 # -lavformat -lavresample -lswscale -lavutil

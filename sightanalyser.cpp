@@ -13,12 +13,8 @@ void SightAnalyser::lookLoop()
 {
 	while(capture.read(current_frame)){
 		faces = face_detector.detectObjects(current_frame);
-		for(size_t i = 0; i < faces.size(); i++){
-			cout << "I see a leather bastard #" << i << endl;
-		}
-		if(faces.size() == 0)
-			cout << "I'm not seeing any human" << endl;
-/*		if(window_name != ""){
+		#ifdef GUI_MODE // Вывод в экран для отладки. На pi нет экрана.
+		if(window_name != ""){
 			for ( size_t i = 0; i < faces.size(); i++ )
 			{
 //				Point center( faces[i].x + faces[i].width/2, faces[i].y + faces[i].height/2 );
@@ -27,6 +23,7 @@ void SightAnalyser::lookLoop()
 			}
 			waitKey(capture.get(CAP_PROP_FPS));
 			imshow(window_name, current_frame );
-		}*/
+		}
+		#endif // GUI_MODE
 	}
 }
