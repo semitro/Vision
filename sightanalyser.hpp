@@ -5,7 +5,12 @@
 
 #include "objectdetector.hpp"
 #include "opencv2/videoio/videoio.hpp"
+
+#define GUI_MODE
+#undef  GUI_MODE
+#ifdef GUI_MODE
 #include "opencv2/highgui.hpp"
+#endif
 
 // The vision
 class SightAnalyser
@@ -14,7 +19,9 @@ public:
 	//window - the name of the window where to show what's going on
 	//"" - don't show pictures, just analyse
 	SightAnalyser(size_t framerate=24, String window_name="");
-
+	size_t howManyFaces(){
+		return faces.size();
+	}
 private:
 	void lookLoop(); // Sight circle
 
