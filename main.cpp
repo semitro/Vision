@@ -34,21 +34,24 @@ int main(int argc, char* argv[])
 		puts("@s2@");
 		switch (sightAnalyser.howManyFaces()) {
 		case 0:
-//			puts("Everything is clear\n");
+			puts("Everything is clear\n");
 			puts("@mw@");
+			cerr << 0 << endl;
 			break;
 		case 1:
 //			puts("I see a leather bastard\n");
-//			cout << "I see a leather bastard" << endl;
+			cerr << "I see a leather bastard" << endl;
 			puts("@mx@");
 			break;
 		case 2:
 //			puts("I see two fucking humans\n");
 			puts("@s3md@");
-//			cout << "Two stupid people I see" << endl;
+
+			cerr << "Two stupid people I see" << endl;
 			break;
 		default:
-			puts("Too many people around\n");
+			cerr << "Too many people around" << endl;
+			puts("@mx@");
 			break;
 		}
 //		cout.flush();

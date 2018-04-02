@@ -13,6 +13,7 @@ void SightAnalyser::lookLoop()
 {
 	while(capture.read(current_frame)){
 		faces = face_detector.detectObjects(current_frame);
+		sight_corrector.count(faces.size());
 		#ifdef GUI_MODE // Вывод в экран для отладки. На pi нет экрана.
 		if(window_name != ""){
 			for ( size_t i = 0; i < faces.size(); i++ )
@@ -26,4 +27,8 @@ void SightAnalyser::lookLoop()
 		}
 		#endif // GUI_MODE
 	}
+}
+
+size_t SightAnalyser::howManyFaces(){
+	return (size_t)sight_corrector.getValue();
 }
