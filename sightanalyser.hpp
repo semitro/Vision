@@ -5,7 +5,10 @@
 
 #include "objectdetector.hpp"
 #include "opencv2/videoio/videoio.hpp"
-#include "opencv2/highgui.hpp"
+//#include "opencv2/highgui.hpp"
+#include <iostream>
+using std::cout;
+using std::endl;
 
 // The vision
 class SightAnalyser

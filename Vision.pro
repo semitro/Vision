@@ -7,9 +7,10 @@ SOURCES += main.cpp \
     objectdetector.cpp \
     sightanalyser.cpp
 
+LIBS += -lpthread -lavcodec
+# -lavformat -lavresample -lswscale -lavutil
+LIBS += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_videoio -lopencv_objdetect -lopencv_imgproc
 
-LIBS += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui -lopencv_videoio -lopencv_objdetect -lopencv_imgproc
-LIBS += -lpthread
 HEADERS += \
     objectdetector.hpp \
     sightanalyser.hpp
