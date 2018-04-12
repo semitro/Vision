@@ -11,9 +11,9 @@ public:
 	void count(int value); // Добавить запись о количестве объектов
 	int getValue();
 private:
-	size_t current_value;  // Сколько сейчас объектов
+	volatile size_t current_value;  // Сколько сейчас объектов
 	size_t cooldown;       // Сколько на сброс
-	size_t current_charge; // Сколько сейчас кадров учтено
+	volatile size_t current_charge; // Сколько сейчас кадров учтено
 	std::mutex value_get_set_mutex;
 };
 

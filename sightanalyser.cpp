@@ -18,8 +18,8 @@ void SightAnalyser::lookLoop()
 		if(window_name != ""){
 			for ( size_t i = 0; i < faces.size(); i++ )
 			{
-				Point center( faces[i].x + faces[i].width/2, faces[i].y + faces[i].height/2 );
-				ellipse( current_frame, center, Size( faces[i].width/2, faces[i].height/2 ), 0, 0, 360,
+//				Point center( faces[i].x + faces[i].width/2, faces[i].y + faces[i].height/2 );
+//				ellipse( current_frame, center, Size( faces[i].width/2, faces[i].height/2 ), 0, 0, 360,
 						 Scalar( 255, 0, 255 ), 4, 8, 0 );
 			}
 			waitKey(capture.get(CAP_PROP_FPS));
