@@ -8,6 +8,9 @@
 
 using namespace std;
 
+#define GUI_MODE
+#undef  GUI_MODE
+
 int main(int argc, char* argv[])
 {
 	int fps = 20;

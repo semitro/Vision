@@ -8,8 +8,7 @@
 
 #include "sightcorrector.hpp"
 
-#define GUI_MODE
-#undef  GUI_MODE
+
 #ifdef GUI_MODE
 #include "opencv2/highgui.hpp"
 #endif
