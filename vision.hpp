@@ -8,18 +8,20 @@
 
 #include "sightcorrector.hpp"
 
+#define GUI_MODE
+//#undef  GUI_MODE
 
 #ifdef GUI_MODE
 #include "opencv2/highgui.hpp"
 #endif
 
 // The vision
-class SightAnalyser
+class Vision
 {
 public:
 	//window - the name of the window where to show what's going on
 	//"" - don't show pictures, just analyse
-	SightAnalyser(size_t framerate=24, String window_name="");
+	Vision(size_t framerate=24, String window_name="");
 	size_t howManyFaces();
 
 private:

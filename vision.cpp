@@ -1,15 +1,15 @@
-#include "sightanalyser.hpp"
+#include "vision.hpp"
 
-SightAnalyser::SightAnalyser(size_t framerate, String window_name)
+Vision::Vision(size_t framerate, String window_name)
 	:face_detector("haarcascade_frontalface_default.xml"), capture(0),
 	  window_name(window_name)
 {
 	capture.set(CAP_PROP_FPS, framerate);
-	std::thread looking(&SightAnalyser::lookLoop, this);
+	std::thread looking(&Vision::lookLoop, this);
 	looking.detach(); // threads should work independly
 }
 
-void SightAnalyser::lookLoop()
+void Vision::lookLoop()
 {
 	while(capture.read(current_frame)){
 		faces = face_detector.detectObjects(current_frame);
@@ -28,6 +28,6 @@ void SightAnalyser::lookLoop()
 	}
 }
 
-size_t SightAnalyser::howManyFaces(){
+size_t Vision::howManyFaces(){
 	return (size_t)sight_corrector.getValue();
 }
