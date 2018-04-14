@@ -4,8 +4,7 @@
 #include <unordered_map>
 #include <list>
 #include <string>
-
-
+#include <functional>
 
 /*
  * Узел семантической сети
@@ -36,7 +35,7 @@ private:
 
 // Custom Hash Functor that will compute the hash on the
 // passed string objects length
-struct NodeHasher;
+
 
 class Node
 {
@@ -73,13 +72,6 @@ private:
 //		    Не появляется ли дублицирование со связями?
 //			Или остаются ли тогда нужными сами связи?
 };
-
-//struct NodeHasher{
-//  size_t operator()(const Node*  obj) const
-//  {
-//	return std::hash<std::string>()(obj.getName());
-//  }
-//};
 
 
 
