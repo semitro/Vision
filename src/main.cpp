@@ -6,10 +6,14 @@
 
 #include <stdio.h>
 
+#include "semantic/testing.h"
+
 using namespace std;
 
 int main(int argc, char* argv[])
 {
+	test_semantic_node();
+	return 0;
 	int fps = 20;
 	int opt = 0;
 	//parsing command-line args

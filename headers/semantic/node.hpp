@@ -2,8 +2,10 @@
 #define NODE_HPP
 
 #include <unordered_map>
-
+#include <list>
 #include <string>
+
+
 
 /*
  * Узел семантической сети
@@ -21,12 +23,20 @@ public:
 
 	Relation(RelationType type);
 
+	RelationType getType() const;
+	void setType(const RelationType &value);
+	bool operator==(const Relation &other) const;
 private:
 	RelationType type;
 	bool invert;  // Например, чтобы подчеркнуть, что что-то
 				  // НИ В КОЕМ СЛУЧАЕ НЕ ЯВЛЯЕТСЯ чем-то
 				  // (Остуствие связи значит лишь незивестность)
 };
+
+
+// Custom Hash Functor that will compute the hash on the
+// passed string objects length
+struct NodeHasher;
 
 class Node
 {
@@ -36,8 +46,14 @@ public:
 		Adjective
 	};
 
-	Node(NodeType type, std::string name);
+	Node(std::string name, NodeType type=NodeType::Noun );
 	void addRelation(Node* subject, Relation relation);
+	std::list<Node *> getSubectsByRelation(Relation::RelationType relation_filter);
+
+	std::string getName() const;
+	void setName(const std::string &value);
+
+	bool operator==(const Node &other) const;
 
 private:
 	std::string name;
@@ -46,7 +62,7 @@ private:
 //	std::list<std::pair<Node*,Relation>> subjects; // Субъекты взаимодействия
 	// Это хэш-мапа. В списке бы там всё равно пришлось проеврять, есть ли связть с текущим элементом
 	// Звёздочка - не лишнее ли? А если та же нода с другим указателем?
-	std::unordered_multimap<Node*, Relation> subjects;
+	std::unordered_multimap<Node*, Relation > subjects;
 	// Множество. Ключ - это строка - название ноды
 	// Указатель на каждую ноду хранится только один,
 	// но к ней может быть множество отношений
@@ -57,6 +73,14 @@ private:
 //		    Не появляется ли дублицирование со связями?
 //			Или остаются ли тогда нужными сами связи?
 };
+
+//struct NodeHasher{
+//  size_t operator()(const Node*  obj) const
+//  {
+//	return std::hash<std::string>()(obj.getName());
+//  }
+//};
+
 
 
 #endif // NODE_HPP
