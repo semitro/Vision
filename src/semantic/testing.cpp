@@ -10,6 +10,7 @@ void walk_through_isA(Node* node){
 
 
 void test_semantic_node(){
+
 	Node* object = new Node("Object", Node::Noun);
 
 	Node* animal = new Node("Animal", Node::Noun);
@@ -38,9 +39,27 @@ void test_semantic_node(){
 
 	list<Node*> l = cat->getSubectsByRelation(Relation::hasAttribue);
 	for(auto i : l){
-		cout << "cat is " << i->getName() << endl;
+		cout << "cat is " << i->getName() << " ";
 	}
 
 	walk_through_isA(cat);
+
+	cout << "\n*****\nSEMANTIC WEB USING:\n******" << endl;
+	SemanticWeb semantic;
+	semantic.addNode(object);
+	semantic.addNode(animal);
+	semantic.addNode(cat);
+	semantic.addNode(fluffy);
+	semantic.addNode(pretty);
+	semantic.addNode(pretty2);
+	semantic.addNode(pretty2);
+	semantic.addNode(pretty2);
+
+	vt::Node n("Cat");
+	if(semantic.getNode(*cat) == NULL){
+		cout << " BAD CAT NULL " << endl;
+	}
+	walk_through_isA(semantic.getNode(n));
+	cout << "it's over" << endl;
 }
 

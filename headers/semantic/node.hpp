@@ -6,11 +6,9 @@
 #include <string>
 #include <functional>
 
-/*
- * Узел семантической сети
- * Объект реального мира или его признак: кошка, дерево,
- * красный, бежать, быстро
- */
+
+namespace vt{
+
 // Тип связи в семантическом графе
 class Relation{
 public:
@@ -32,11 +30,11 @@ private:
 				  // (Остуствие связи значит лишь незивестность)
 };
 
-
-// Custom Hash Functor that will compute the hash on the
-// passed string objects length
-
-
+/*
+ * Узел семантической сети
+ * Объект реального мира или его признак: кошка, дерево,
+ * красный, бежать, быстро
+ */
 class Node
 {
 public:
@@ -73,6 +71,8 @@ private:
 //			Или остаются ли тогда нужными сами связи?
 };
 
+}
 
+using namespace vt;
 
 #endif // NODE_HPP

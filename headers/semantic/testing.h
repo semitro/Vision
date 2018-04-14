@@ -4,6 +4,9 @@
 #include <iostream>
 
 #include "semantic/node.hpp"
+#include "semantic/semanticweb.hpp"
+
+using namespace vt;
 
 using std::list;
 using std::cin;
