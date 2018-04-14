@@ -12,7 +12,7 @@ SOURCES += main.cpp \
 
 LIBS += -lpthread -lavcodec
 # -lavformat -lavresample -lswscale -lavutil
-LIBS += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_videoio -lopencv_objdetect -lopencv_imgproc -lopencv_highgui
+LIBS += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_videoio -lopencv_objdetect -lopencv_imgproc #-lopencv_highgui
 
 HEADERS += \
     objectdetector.hpp \
