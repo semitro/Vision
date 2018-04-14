@@ -35,7 +35,6 @@ int main(int argc, char* argv[])
 	Robot robot;
 	robot.startLifeCycle();
 
-
 	return 0;
 }
 

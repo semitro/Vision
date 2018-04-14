@@ -5,16 +5,18 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     objectdetector.cpp \
-    sightanalyser.cpp \
     behaviour.cpp \
-    sightcorrector.cpp
+    sightcorrector.cpp \
+    robot.cpp \
+    vision.cpp
 
 LIBS += -lpthread -lavcodec
 # -lavformat -lavresample -lswscale -lavutil
-LIBS += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_videoio -lopencv_objdetect -lopencv_imgproc #-lopencv_highgui
+LIBS += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_videoio -lopencv_objdetect -lopencv_imgproc -lopencv_highgui
 
 HEADERS += \
     objectdetector.hpp \
-    sightanalyser.hpp \
-    sightcorrector.hpp
+    sightcorrector.hpp \
+    robot.hpp \
+    vision.hpp
 
