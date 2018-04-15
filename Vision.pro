@@ -4,12 +4,15 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    src/objectdetector.cpp \
-    src/behaviour.cpp \
-    src/sightcorrector.cpp \
-    src/vision.cpp \
+    src/main.cpp \
     src/robot.cpp \
-    src/main.cpp
+    src/behaviour.cpp \
+    src/vision/objectdetector.cpp \
+    src/vision/sightcorrector.cpp \
+    src/vision/vision.cpp \
+    src/semantic/node.cpp \
+    src/semantic/testing.cpp \
+    src/semantic/semanticweb.cpp
 
 CCFLAG +=
 
@@ -20,10 +23,13 @@ LIBS += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_videoio -lope
 INCLUDEPATH += headers
 
 HEADERS += \
-    headers/objectdetector.hpp \
-    headers/sightcorrector.hpp \
     headers/robot.hpp \
-    headers/vision.hpp
+    headers/vision/objectdetector.hpp \
+    headers/vision/sightcorrector.hpp \
+    headers/vision/vision.hpp \
+    headers/semantic/node.hpp \
+    headers/semantic/testing.h \
+    headers/semantic/semanticweb.hpp
 
 STATECHARTS +=
 

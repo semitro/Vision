@@ -1,4 +1,4 @@
-#include "vision.hpp"
+#include "vision/vision.hpp"
 
 Vision::Vision(size_t framerate, String window_name)
 	:face_detector("haarcascade_frontalface_default.xml"), capture(0),

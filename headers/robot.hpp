@@ -4,7 +4,7 @@
 #include <iostream>
 #include <unistd.h>
 
-#include "vision.hpp"
+#include "vision/vision.hpp"
 
 // Убрать ли в другое место?
 #define FRAMERATE 24

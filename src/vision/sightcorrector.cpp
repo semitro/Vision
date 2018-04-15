@@ -1,4 +1,4 @@
-#include "sightcorrector.hpp"
+#include "vision/sightcorrector.hpp"
 
 SightCorrector::SightCorrector(int avg_duration)
 	: cooldown(avg_duration), wich_buffer(true),

@@ -4,7 +4,6 @@
 #include <unordered_map>
 #include <list>
 #include <string>
-#include <functional>
 
 
 namespace vt{

@@ -16,3 +16,8 @@ Node* SemanticWeb::getNode(Node node){
 	else
 		return *i;
 }
+
+Node* SemanticWeb::getNode(std::string name){
+	Node temp(name);
+	return getNode(temp);
+}
