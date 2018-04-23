@@ -11,8 +11,9 @@ Robot::Robot (Mind &mind, AttentionController &attentionController, DecisionPerf
 
 void Robot::startLifeCycle() const{
 
-	decisionPerformer.perform(mind.makeDesition());
-	this->decisionPerformer.perform(mind.makeDesition());
+	while(true){
+		this->decisionPerformer.perform(mind.makeDesition());
+	}
 //	mind.payAttention();
 //	vision.howManyFaces();
 //	while(true){
