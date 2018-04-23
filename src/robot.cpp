@@ -14,6 +14,7 @@ void Robot::startLifeCycle() const{
 	while(true){
 		this->attentionController.tick();
 		this->decisionPerformer.perform(mind.makeDesition());
+		usleep(100000);
 	}
 //	mind.payAttention();
 //	vision.howManyFaces();

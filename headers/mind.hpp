@@ -7,6 +7,7 @@
 #include "decision.hpp"
 
 #include "attention_controller.hpp"
+#include "behaviour.hpp"
 
 /*
  * Класс-обёртка над семантической сетью и компонента робота.
@@ -24,7 +25,7 @@ using std::list;
 // HavingAttention - интерфейс штуки, имеющей внимание
 class Mind : public HavingAttention{
 public:
-	Mind();
+	Mind(Behaviour& behaviour);
 	// Node - узел семантической сети: трактор, красный, быстро
 	// Дубликаты не вставляются, потому что сеть хранится
 	// с помощью set-а
@@ -36,6 +37,9 @@ public:
 	Decision makeDesition();
 
 private:
+	Behaviour&		decisionMaker; // Поведение - то, что делает решения.
+								   // Вынесение в отдельный класс позволяет создать
+								   //  много разных моделей поведения. не наследуясь от мозга
 	SemanticWeb     semanticWeb;
 	list<vt::Node>  spotlight; // Объекты в данный момент времени, думать о них
 };

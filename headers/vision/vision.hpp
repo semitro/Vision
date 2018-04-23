@@ -21,7 +21,7 @@ class Vision
 public:
 	//window - the name of the window where to show what's going on
 	//"" - don't show pictures, just analyse
-	Vision(size_t framerate=24, String window_name="");
+	Vision(size_t framerate=24, String window_name="s");
 	size_t howManyFaces();
 
 private:
