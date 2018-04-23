@@ -12,7 +12,11 @@ SOURCES += \
     src/vision/vision.cpp \
     src/semantic/node.cpp \
     src/semantic/testing.cpp \
-    src/semantic/semanticweb.cpp
+    src/semantic/semanticweb.cpp \
+    src/mind.cpp \
+    src/decision_performer.cpp \
+    src/attention_controller.cpp \
+    src/decision.cpp
 
 CCFLAG +=
 
@@ -29,9 +33,14 @@ HEADERS += \
     headers/vision/vision.hpp \
     headers/semantic/node.hpp \
     headers/semantic/testing.h \
-    headers/semantic/semanticweb.hpp
+    headers/semantic/semanticweb.hpp \
+    headers/mind.hpp \
+    headers/decision.hpp \
+    headers/decision_performer.hpp \
+    headers/attention_controller.hpp
 
 STATECHARTS +=
 
-DISTFILES +=
+DISTFILES += \
+    headers/semantic/semantic.qmodel
 

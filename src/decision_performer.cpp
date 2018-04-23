@@ -1,9 +1,11 @@
 #include "decision_performer.hpp"
 
 
-void SillyPerformer::perform(Decision decision){
+DecisionPerformer::DecisionPerformer(){
 
-	decision.getAction();
+}
+void RealPerformer::perform(Decision decision){
+//	decision.getAction();
 }
 
 // it's funny, but a virtual destructor must have a body in C++

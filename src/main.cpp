@@ -36,10 +36,13 @@ int main(int argc, char* argv[])
 //		}
 //	}
 
-	const HavingAttention* mind = new Mind();
-	const Vision* vision = new Vision();
-	const AttentionController*  attentionCtrl = new AttentionController(*mind, *vision);
-	Robot robot(*new DebugPerformer(), );
+	// const in this case means that the pointer won't be modifyed
+	HavingAttention* const attentionControlled = new Mind();
+	Mind* const mind = (Mind*)attentionControlled;
+	Vision* const vision = new Vision();
+	AttentionController* const attentionCtrl = new AttentionController(*attentionControlled, *vision);
+	DecisionPerformer* const decisionPerformer = new DebugPerformer();
+	Robot robot(*mind, *attentionCtrl, *decisionPerformer);
 	robot.startLifeCycle();
 
 	return 0;

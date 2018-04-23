@@ -19,10 +19,12 @@ class AttentionController
 {
 public:
 	// Управляем зависимостями через конструктор
-	AttentionController(const HavingAttention& controlled, const Vision& vision);
+	AttentionController(HavingAttention &controlled, Vision &vision);
+	// Поработатьы
+	void tick();
 private:
 	AttentionController();
-	HavingAttention& attention; // Если здесь указать ссылку, будет ли тот же объект, что в конструкторе?
+	HavingAttention& attentionControlled; // Если здесь указать ссылку, будет ли тот же объект, что в конструкторе?
 	Vision& vision;
 };
 

@@ -19,14 +19,15 @@ class Robot
 {
 public:
 	// Компонентно-ориентированное программирование
-	Robot(const Vision &visio, const AttentionController& attentionController,
-		  const DecisionPerformer &performer);
-	void startLifeCycle();
+	// Mind - должен быть тот же, что и у AttentionController
+	Robot(Mind &mind, AttentionController& attentionController,
+		  DecisionPerformer &performer);
+	void startLifeCycle() const;
 private:
 	Robot();
-	Mind   mind;
-	const AttentionController& attentionController;
-	const DecisionPerformer&   decisionPerformer;
+	AttentionController& attentionController;
+	Mind  &mind;
+	DecisionPerformer&   decisionPerformer;
 };
 
 #endif // ROBOT_HPP
