@@ -36,7 +36,10 @@ int main(int argc, char* argv[])
 //		}
 //	}
 
-	Robot robot(*new DebugPerformer());
+	const HavingAttention* mind = new Mind();
+	const Vision* vision = new Vision();
+	const AttentionController*  attentionCtrl = new AttentionController(*mind, *vision);
+	Robot robot(*new DebugPerformer(), );
 	robot.startLifeCycle();
 
 	return 0;

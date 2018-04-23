@@ -1,9 +1,9 @@
 #include "robot.hpp"
 
 
-Robot::Robot(const DecisionPerformer &performer):
-	vision(FRAMERATE, WINDOW_NAME),
-	decisionPerformer(performer)
+Robot::Robot(AttentionController& attentionController, DecisionPerformer &performer):
+	decisionPerformer(performer),
+	attentionController(attentionController)
 
 {
 

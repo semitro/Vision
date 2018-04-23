@@ -7,6 +7,7 @@
 #include "vision/vision.hpp"
 #include "mind.hpp"
 #include "decision_performer.hpp"
+#include "attention_controller.hpp"
 
 // Убрать ли в другое место?
 #define FRAMERATE 24
@@ -17,12 +18,15 @@ using namespace std;
 class Robot
 {
 public:
-	Robot(const DecisionPerformer &performer);
+	// Компонентно-ориентированное программирование
+	Robot(const Vision &visio, const AttentionController& attentionController,
+		  const DecisionPerformer &performer);
 	void startLifeCycle();
 private:
-	Vision vision; //
+	Robot();
 	Mind   mind;
-	const DecisionPerformer& decisionPerformer;
+	const AttentionController& attentionController;
+	const DecisionPerformer&   decisionPerformer;
 };
 
 #endif // ROBOT_HPP
