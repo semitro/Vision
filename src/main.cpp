@@ -10,6 +10,8 @@
 
 using namespace std;
 
+// Принимает как аргумент файл двигателя и устройства с датчиками
+//
 int main(int argc, char* argv[])
 {
 //	test_semantic_node();
@@ -19,22 +21,22 @@ int main(int argc, char* argv[])
 	//parsing command-line args
 	setbuf(stdout, NULL);
 
-	while ((opt = getopt(argc, argv, "hf:")) != -1) {
-		switch (opt) {
-		case '?':
-		case 'h':
-			cout << "Opecv vision";
-			break;
-		case 'f':
-			fps = atoi(optarg);
-			cout << "framerate:" << fps << endl;
-			break;
-		default: /* '?' */
-			break;
-		}
-	}
+//	while ((opt = getopt(argc, argv, "hf:")) != -1) {
+//		switch (opt) {
+//		case '?':
+//		case 'h':
+//			cout << "Opecv vision";
+//			break;
+//		case 'f':
+//			fps = atoi(optarg);
+//			cout << "framerate:" << fps << endl;
+//			break;
+//		default: /* '?' */
+//			break;
+//		}
+//	}
 
-	Robot robot;
+	Robot robot(*new DebugPerformer());
 	robot.startLifeCycle();
 
 	return 0;

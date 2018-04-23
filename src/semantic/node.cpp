@@ -5,6 +5,9 @@ Node::Node(std::string name, NodeType type)
 {
 }
 
+Verb::Verb(string name):Node(name, Node::Verb){
+
+}
 
 void Node::addRelation(Node *subject, Relation relation){
 	std::pair<Node*,Relation> p(subject, relation);

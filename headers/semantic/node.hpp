@@ -5,7 +5,7 @@
 #include <list>
 #include <string>
 
-
+using std::string;
 namespace vt{
 
 // Тип связи в семантическом графе
@@ -39,7 +39,8 @@ class Node
 public:
 	enum NodeType{
 		Noun,
-		Adjective
+		Adjective,
+		Verb
 	};
 
 	Node(std::string name, NodeType type=NodeType::Noun );
@@ -47,10 +48,9 @@ public:
 	std::list<Node *> getSubectsByRelation(Relation::RelationType relation_filter);
 
 	std::string getName() const;
-	void setName(const std::string &value);
+	void setName(const string &value);
 
 	bool operator==(const Node &other) const;
-
 private:
 	std::string name;
 	// Хранить отношение или просто ссылку одно из заранее определённых отношений?
@@ -70,6 +70,11 @@ private:
 //			Или остаются ли тогда нужными сами связи?
 };
 
+// Полезно ограничить иногда
+class Verb : public Node{
+public:
+	Verb(string name);
+};
 }
 
 using namespace vt;

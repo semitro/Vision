@@ -1,13 +1,19 @@
 #include "robot.hpp"
 
 
-Robot::Robot():
-	vision(FRAMERATE, WINDOW_NAME)
+Robot::Robot(const DecisionPerformer &performer):
+	vision(FRAMERATE, WINDOW_NAME),
+	decisionPerformer(performer)
+
 {
 
 }
 
 void Robot::startLifeCycle(){
+//	mind.makeDesition();
+	mind.makeDesition();
+//	mind.payAttention();
+	vision.howManyFaces()
 	while(1){
 		puts("@s2@");
 		switch (vision.howManyFaces()) {
