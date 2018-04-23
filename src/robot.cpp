@@ -12,6 +12,7 @@ Robot::Robot (Mind &mind, AttentionController &attentionController, DecisionPerf
 void Robot::startLifeCycle() const{
 
 	while(true){
+		this->attentionController.tick();
 		this->decisionPerformer.perform(mind.makeDesition());
 	}
 //	mind.payAttention();

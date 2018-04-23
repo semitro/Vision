@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
 	HavingAttention* const attentionControlled = new Mind();
 	Mind* const mind = (Mind*)attentionControlled;
 	Vision* const vision = new Vision();
-	AttentionController* const attentionCtrl = new AttentionController(*attentionControlled, *vision);
+	AttentionController* const attentionCtrl   = new AttentionController(*attentionControlled, *vision);
 	DecisionPerformer* const decisionPerformer = new DebugPerformer();
 	Robot robot(*mind, *attentionCtrl, *decisionPerformer);
 	robot.startLifeCycle();
