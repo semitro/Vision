@@ -12,6 +12,14 @@ void RealPerformer::perform(Decision decision){
 DecisionPerformer::~DecisionPerformer(){}
 
 void DebugPerformer::perform(Decision decision){
-	cout << "Выполняю действие '" << decision.getAction().getName() <<
+	cerr << "Выполняю действие '" << decision.getAction().getName() <<
 			"'. Причина: " + decision.getReason() << endl;
+	if(decision.getAction().getName() == "change direction"){
+		cout << "@ma@" << endl;
+	}
+	else
+		if(decision.getAction().getName() == "move forward"){
+			cout << "@mw@" << endl;
+		}
+
 }
