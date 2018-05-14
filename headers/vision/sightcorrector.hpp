@@ -7,15 +7,15 @@
 class SightCorrector
 {
 public:
-	SightCorrector(int avg_duration=8);
+	SightCorrector(size_t avg_duration=4);
 	void count(int value); // Добавить запись о количестве объектов
 	int getValue();
 private:
+	size_t     cooldown;    // Сколько на сброс
 	bool       wich_buffer; // См. паттерн 'двойная буферизация'
 	size_t     buffer_1;
 	size_t     buffer_2;
-	size_t     cooldown;                // Сколько на сброс
-	size_t     charge_1;                // Сколько сейчас кадров учтено в первом буфере
+	size_t     charge_1;    // Сколько сейчас кадров учтено в первом буфере
 	size_t     charge_2;
 };
 

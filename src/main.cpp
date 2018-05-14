@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 {
 //	test_semantic_node();
 //	return 0;
-	int fps = 20;
+	int fps = 20; // dunno why but it doesn't change the actual fps
 	int opt = 0;
 	//parsing command-line args
 	setbuf(stdout, NULL);
@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
 	SociofobBehaviour behaviour;
 	HavingAttention* const attentionControlled = new Mind(behaviour);
 	Mind* const mind = (Mind*)attentionControlled;
-	Vision* const vision = new Vision();
+	Vision* const vision = new Vision(fps);
 	AttentionController* const attentionCtrl   = new AttentionController(*attentionControlled, *vision);
 	DecisionPerformer* const decisionPerformer = new DebugPerformer();
 	Robot robot(*mind, *attentionCtrl, *decisionPerformer);

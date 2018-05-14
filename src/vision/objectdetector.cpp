@@ -7,9 +7,9 @@ ObjectDetector::ObjectDetector(const String neural_network_file)
 }
 
 
-std::vector<Rect> ObjectDetector::detectObjects(Mat frame)
+vector<Rect> ObjectDetector::detectObjects(const Mat frame)
 {
-	std::vector<Rect> objects;
+	vector<Rect> objects;
 	Mat frame_gray; // dunno why, it's just from an example
 	cvtColor(frame, frame_gray, COLOR_BGR2GRAY);
 	equalizeHist(frame_gray, frame_gray);

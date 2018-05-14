@@ -4,7 +4,10 @@
 #include "opencv2/objdetect.hpp"
 #include "opencv2/imgproc.hpp"
 
+#include <vector>
+
 using namespace cv;
+using std::vector;
 
 // detect object on a frame
 class ObjectDetector
@@ -12,7 +15,7 @@ class ObjectDetector
 
 public:
 	ObjectDetector(const String neural_network_file);
-	std::vector<Rect> detectObjects(Mat frame);
+	vector<Rect> detectObjects(const Mat frame);
 private:
 	CascadeClassifier classifier;
 };

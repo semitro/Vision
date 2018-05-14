@@ -10,7 +10,7 @@
 #include "attention_controller.hpp"
 
 // Убрать ли в другое место?
-#define FRAMERATE 24
+#define FRAMERATE 2
 #define WINDOW_NAME "MainWindow"
 
 using namespace std;
