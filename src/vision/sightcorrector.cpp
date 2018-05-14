@@ -1,11 +1,10 @@
 #include "vision/sightcorrector.hpp"
 
-SightCorrector::SightCorrector(int avg_duration)
+SightCorrector::SightCorrector(size_t avg_duration)
 	: cooldown(avg_duration), wich_buffer(true),
 	  buffer_1(0), buffer_2(0), charge_1(1), charge_2(1)
 {
-	if(cooldown < 5)
-		cooldown = 5;
+	if(cooldown < 1) cooldown = 1; //avg_duration
 }
 
 void SightCorrector::count(int value){
