@@ -7,7 +7,7 @@ ObjectDetector::ObjectDetector(const String neural_network_file)
 }
 
 
-vector<Rect> ObjectDetector::detectObjects(const Mat frame)
+vector<Rect> ObjectDetector::detectObjects(const Mat& frame)
 {
 	vector<Rect> objects;
 	Mat frame_gray; // dunno why, it's just from an example

@@ -15,7 +15,7 @@ class ObjectDetector
 
 public:
 	ObjectDetector(const String neural_network_file);
-	vector<Rect> detectObjects(const Mat frame);
+	vector<Rect> detectObjects(const Mat &frame);
 private:
 	CascadeClassifier classifier;
 };
