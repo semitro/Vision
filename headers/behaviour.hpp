@@ -24,4 +24,11 @@ public:
 								  SemanticWeb &knoweledges);
 };
 
+class SociofillBehaviour : public Behaviour{
+public:
+	virtual Decision makeDecision(const list<vt::Node> &spotlight, const
+								  SemanticWeb &knoweledges);
+
+};
+
 #endif // BEHAVIOUR_H
