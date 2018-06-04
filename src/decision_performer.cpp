@@ -15,11 +15,11 @@ void DebugPerformer::perform(Decision decision){
 	cerr << "Выполняю действие '" << decision.getAction().getName() <<
 			"'. Причина: " + decision.getReason() << endl;
 	if(decision.getAction().getName() == "change direction"){
-		cout << "@ma@" << endl;
+		puts("@ma@");
 	}
 	else
 		if(decision.getAction().getName() == "move forward"){
-			cout << "@mw@" << endl;
+			puts("@mw@");
 		}
 
 }
