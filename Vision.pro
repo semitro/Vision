@@ -16,7 +16,9 @@ SOURCES += \
     src/mind.cpp \
     src/decision_performer.cpp \
     src/attention_controller.cpp \
-    src/decision.cpp
+    src/decision.cpp \
+    src/sensor/distance.cpp \
+    src/settings.cpp
 
 CCFLAG +=
 
@@ -37,7 +39,10 @@ HEADERS += \
     headers/mind.hpp \
     headers/decision.hpp \
     headers/decision_performer.hpp \
-    headers/attention_controller.hpp
+    headers/attention_controller.hpp \
+    headers/behaviour.hpp \
+    headers/sensor/distance.hpp \
+    headers/settings.hpp
 
 STATECHARTS +=
 
