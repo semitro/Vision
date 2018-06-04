@@ -6,8 +6,11 @@ DistanceSensor::DistanceSensor(){
 		return;
 	}
 	 sensor_file = open(settings.getDistance_sensor_file().c_str(), O_RDWR);
-}
+	 thread request_thread(&DistanceSensor::requsest_loop, this);
+	 thread responce_handler_thread(&DistanceSensor::read_loop, this);
 
+}
+// sends 'g' to the nano
 void DistanceSensor::requsest_loop(){
 	char requset_symbol = SENSOR_REQUEST_SYMBOL;
 	while(true){
@@ -21,7 +24,7 @@ void DistanceSensor::requsest_loop(){
 		}
 	}
 }
-
+// read things form nano and set the variable
 void DistanceSensor::read_loop(){
 	static char receive_buffer[128]; // do not wrte onto the stack.
 	while(true){
@@ -31,6 +34,7 @@ void DistanceSensor::read_loop(){
 		for(int i = 0; i < 128; i++){
 			if(receive_buffer[i] < '9' && receive_buffer[i] > '0'){ // skip extra characters
 				sscanf(receive_buffer + i, "%d", &distance_front);
+				printf("SENSOR:: %d", distance_front);
 			}
 		}
 		usleep(SENSOR_REQUEST_INTERVAL);

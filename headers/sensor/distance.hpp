@@ -4,8 +4,10 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <thread>
 #include "settings.hpp"
 
+using std::thread;
 
 class DistanceSensor{
 public:

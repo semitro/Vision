@@ -5,7 +5,7 @@
 
 using std::string;
 
-#define SENSOR_REQUEST_SYMBOL '?'
+#define SENSOR_REQUEST_SYMBOL 'g'
 #define SENSOR_REQUEST_INTERVAL 2000
 class Settings{
 public:
