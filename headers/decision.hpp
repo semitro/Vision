@@ -23,10 +23,12 @@ using vt::Node;
 class Decision{
 public:
 	Decision(Verb action);
-	Verb getAction();
 
+	Verb getAction();
 	string getReason() const;
+
 	void setReason(const string &value);
+	void setAction(const Verb& action);
 private:
 	Verb   action; // Стоит бы добавить, куда и как, или вообще несколько решений
 	string reason;

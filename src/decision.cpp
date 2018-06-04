@@ -6,6 +6,10 @@ Verb Decision::getAction(){
 	return this->action;
 }
 
+void Decision::setAction(const Verb &action){
+	this->action = action;
+}
+
 string Decision::getReason() const
 {
     return reason;

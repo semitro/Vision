@@ -17,12 +17,14 @@ Decision SociofobBehaviour::makeDecision(const list<Node> &spotlight,
 Decision SociofillBehaviour::makeDecision(const list<Node> &spotlight,
 										  const SemanticWeb &knoweledges)
 {
-	Verb action("move forward");
+	Verb action("change direction");
 	Decision decision(action);
 	decision.setReason("looking for something interesting..");
-	if(spotlight.size() == 0 ){
+	if(spotlight.size() != 0 ){
 		decision.setReason("What a lovely thing! (" + std::to_string(spotlight.size()) + " in total");
-		action.setName("change direction");
+		action.setName("move forward");
+		decision.setAction(action);
+
 	}
 
 	return decision;
