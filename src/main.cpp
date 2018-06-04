@@ -3,6 +3,7 @@
 #include <unistd.h>
 
 #include "robot.hpp"
+#include "settings.hpp"
 
 #include <stdio.h>
 
@@ -35,7 +36,12 @@ int main(int argc, char* argv[])
 //			break;
 //		}
 //	}
-
+	if(argc < 2){
+		puts("Don't you forget to give me the sensor device file?");
+		settings.setDistance_sensor_file("-");
+	}
+	else
+		settings.setDistance_sensor_file(argv[2]);
 	// const in this case means that the pointer won't be modifyed
 	SociofillBehaviour behaviour;
 	HavingAttention* const attentionControlled = new Mind(behaviour);
